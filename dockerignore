@@ -1,0 +1,33 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+**/venv/
+.env/
+
+# Ignore model directories or files (if you're using HuggingFace instead)
+gpt2-docstring-model/
+**/gpt2-docstring-model/
+*.zip
+*.bin
+*.safetensors
+
+# Ignore VS Code extension (frontend)
+codedocument/
+**/codedocument/
+
+# Ignore dev/editor config files
+.vscode/
+.DS_Store
+*.ipynb
+
+# Ignore Git
+.git/
+.gitignore
+
+# Ignore compiled wheels and dist (if you ever build)
+build/
+dist/
+*.egg-info/

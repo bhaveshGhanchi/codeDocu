@@ -3,6 +3,10 @@ from pydantic import BaseModel
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, AutoTokenizer, AutoModelForCausalLM
 import torch
 import uvicorn
+import os
+
+port = int(os.environ.get("PORT", 8000))  # fallback to 8000 locally
+
 
 app = FastAPI()
 
@@ -23,7 +27,6 @@ class CodeRequest(BaseModel):
 
 @app.post("/generate-docstring")
 def generate_docstring(request: CodeRequest):
-    
     prompt = f"<s> {request.code} </s> <sep>"
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
     input_len = input_ids.shape[1]
@@ -39,5 +42,8 @@ def generate_docstring(request: CodeRequest):
     result = tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
     return {"docstring": result}
 
+
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    
+    port = int(os.environ.get("PORT", 8000)) 
+    uvicorn.run(app, host="0.0.0.0", port=port)

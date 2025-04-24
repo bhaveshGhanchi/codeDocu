@@ -6,13 +6,34 @@ public class Main {
     }
 
    // Returns the sum of two integers.
- public static int sum(int a , int b){
+
+
+
+/** 
+Returns the sum of two integers.
+
+@param a the first integer
+@param b the second integer
+@return the sum of the two integers
+@since 1.0.0
+@see #sum(int)
+@see*/
+public static int sum(int a , int b){
         int sum = a + b;
         return sum;
     }
+    
 // Multiply two integers.
 
-// Multiply two integers.
+
+/** 
+Multiply two integers by their sum.
+
+@param a the first integer
+@param b the second integer
+@return the sum of the two integers
+@since 1.0.0
+@see #multiply(int*/
 public static int mul(int a , int b){
         int sum = a * b;
         return sum;
@@ -23,14 +44,26 @@ public class StringUtils {
     // Reverses the given string
     
    
+
+/** 
+Reverse the input string.
+
+@param input the input string to reverse.
+@return the reversed string.
+@throws IllegalArgumentException if the input string is null or empty.
+@since 1.0.0
+@*/
 public static String reverse(String input) {
         if (input == null || input.isEmpty()) return input;
         return new StringBuilder(input).reverse().toString();
     }
 
+
+
+    
     // Capitalizes the first letter of each word in a sentence
     
-    // Capitalize words.
+
 /** 
 Capitalize words.
 
@@ -51,14 +84,28 @@ public static String capitalizeWords(String sentence) {
                       .append(str:'');
             }
         }
-
         return result.toString().trim();
     }
-    public static String cleanAndLower(String input) { 
+    
+    /** 
+Clean and lowercase the input string.
+
+@param input the input string
+@return the cleaned and lowercase string.
+@throws IllegalArgumentException if the input string is {@code null} or empty.
+@since*/
+public static String cleanAndLower(String input) { 
         return input.trim().toLowerCase().replaceAll('[^a-z0-9 ]', ''); 
     }
 
-    public static void main(String[] args) {
+    /** 
+Main entry point.
+
+@param args command line arguments.
+@see java.util.Formatter#main(java.lang.String[])
+@since 1.0.0
+@see javax.swing.J*/
+public static void main(String[] args) {
         String original = "hello world from java";
         String reversed = reverse(original);
         String capitalized = capitalizeWords(original);
