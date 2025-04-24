@@ -1,0 +1,23 @@
+# Ignore any virtual environment folder named "venv" anywhere in the project
+**/venv/
+**/.env/
+
+# Ignore any folder named "gpt2-docstring-model" at any depth
+**/gpt2-docstring-model/
+
+# Ignore all model weight file types wherever they are
+**/*.safetensors
+**/*.bin
+**/*.zip
+
+# VS Code settings
+**/.vscode/
+.vscode-test/
+
+# Node modules, just in case
+**/node_modules/
+*.vsix
+
+# Python cache files
+__pycache__/
+*.py[cod]
